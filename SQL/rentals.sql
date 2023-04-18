@@ -51,4 +51,4 @@ SUM(CASE rating
   ELSE 0
 END) AS PG13
 
-FROM film;
+FROM film
