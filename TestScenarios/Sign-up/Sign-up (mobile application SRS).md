@@ -1,5 +1,3 @@
-# Description
-
 ## Password restrictions
 
 - Password must be at least 6 characters
