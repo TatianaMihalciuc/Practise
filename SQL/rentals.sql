@@ -1,54 +1,62 @@
--- Find the number of rentals for each category.
-SELECT category.category_id,category.name,COUNT(rental.rental_id) FROM category
-INNER JOIN film_category
-ON category.category_id=film_category.category_id
-INNER JOIN inventory
-ON inventory.film_id=film_category.film_id
-INNER JOIN rental
-ON rental.inventory_id=inventory.inventory_id
-GROUP BY category.category_id,category.name
-ORDER BY COUNT(rental.rental_id) DESC;
+-- Write a query to find the number of films in each rating category.
+SELECT rating, COUNT(*) AS num_films
+FROM films
+GROUP BY rating;
 
--- Find the average rental duration (in days) for each category.
-SELECT AVG(film.rental_duration), film_category.category_id,category.name FROM film
-INNER JOIN film_category
-ON film.film_id=film_category.film_id
-INNER JOIN category
-ON category.category_id=film_category.category_id
-GROUP BY film_category.category_id,category.name;
+-- Write a query to find the total length of films released in each year.
+SELECT release_year, SUM(length) AS total_length
+FROM films
+GROUP BY release_year;
 
---Find the rental with the highest payment amount.
-SELECT rental_id, SUM(amount) FROM payment
-GROUP BY rental_id
-ORDER BY SUM(amount) DESC
-LIMIT 1;
+-- Write a query to find the actors who have appeared in the most films, 
+-- sorted by the number of films in descending order.
+SELECT actor.actor_id, actor.first_name, actor.last_name, COUNT(*) AS num_films
+FROM actor
+JOIN film_actor ON actor.actor_id = film_actor.actor_id
+GROUP BY actor.actor_id
+ORDER BY num_films DESC;
 
---Find the number of rentals per month for the year 2005.
-SELECT COUNT(rental_id), TO_CHAR(rental_date,'Month'), EXTRACT(year FROM rental_date)
-FROM rental
-WHERE EXTRACT(year FROM rental_date)=2005
-GROUP BY TO_CHAR, EXTRACT(year FROM rental_date);
+-- Write a query to find the films that were released in the year 2000 and have a rating of 'PG-13'.
+SELECT *
+FROM films
+WHERE release_year = 2000 AND rating = 'PG-13';
 
---Find the rental_ids for rentals that were returned by customers who have overdue rentals. Overdue is more than 9 days
-SELECT customer_id, rental_date, return_date, return_date::DATE-rental_date::DATE AS rental_days 
-FROM rental
-WHERE (return_date::DATE - rental_date::DATE)>=9;
+-- Write a query to find the actors who have appeared in films released in the year 2005.
+SELECT actor.actor_id, actor.first_name, actor.last_name
+FROM actor
+JOIN film_actor ON actor.actor_id = film_actor.actor_id
+JOIN films ON film_actor.film_id = films.film_id
+WHERE films.release_year = 2005;
 
---Count the number of films per movie rating using CASE
-SELECT 
-SUM(CASE rating
-  WHEN 'R' THEN 1
-  ELSE 0
-END) AS R,
+-- Write a query to find the average length of films in each rating category.
+SELECT rating, AVG(length) AS avg_length
+FROM films
+GROUP BY rating;
 
-SUM(CASE rating
-  WHEN 'PG' THEN 1
-  ELSE 0
-END) AS PG,
+-- Write a query to find the actors who have appeared in films with a total length greater than 3 hours.
+SELECT actor.actor_id, actor.first_name, actor.last_name
+FROM actor
+JOIN film_actor ON actor.actor_id = film_actor.actor_id
+JOIN films ON film_actor.film_id = films.film_id
+GROUP BY actor.actor_id
+HAVING SUM(films.length) > 180;
 
-SUM(CASE rating
-  WHEN 'PG-13' THEN 1
-  ELSE 0
-END) AS PG13
+-- Write a query to find the actors who have appeared in at least 5 films, sorted by last name in ascending order.
+SELECT actor.actor_id, actor.first_name, actor.last_name, COUNT(*) AS num_films
+FROM actor
+JOIN film_actor ON actor.actor_id = film_actor.actor_id
+GROUP BY actor.actor_id
+HAVING COUNT(*) >= 5
+ORDER BY actor.last_name ASC;
 
-FROM film
+-- Write a query to find the films that were released on or after January 1st, 2000.
+SELECT *
+FROM films
+WHERE release_year >= '2000-01-01';
+
+-- Write a query to find the actors who have appeared in films released in the month of December.
+SELECT actor.actor_id, actor.first_name, actor.last_name
+FROM actor
+JOIN film_actor ON actor.actor_id = film_actor.actor_id
+JOIN films ON film_actor.film_id = films.film_id
+WHERE EXTRACT(month FROM films.release_year) = 12;
