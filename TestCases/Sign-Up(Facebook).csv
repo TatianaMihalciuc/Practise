@@ -1,0 +1,116 @@
+,Action,Expected Result,Android,Android Notes,iOS,iOS Notes,Web
+,1-Signup page is already opened,,,,,,
+1,Register using valid admin credentials,,,,,,
+1.1,Click on Admin radio button,The Admin button is selected,Ready to Test,,Ready to Test,,Ready to Test
+1.2,Enter a valid admin username,The place holder is removed and username is entered succesfully,Ready to Test,,Ready to Test,,Ready to Test
+1.3,Enter a valid email,The place holder is removed and email is entered succesfully,Ready to Test,,Ready to Test,,Ready to Test
+1.4,Enter a valid password,"-The place holder is removed and password is entered succesfully
+-The password id encripted(****) or (......)",Ready to Test,,Ready to Test,,
+1.5,Click on Sign-up button,"-Sign-up is succesfull
+-User is redirected to the main page
+-A verification email is sent to the user",Ready to Test,,Ready to Test,,
+2,Register using valid Project Owner credentials,,,,,,
+2.1,Click on Admin radio button,The Project Owner button is selected,Ready to Test,,Ready to Test,,Ready to Test
+2.2,Enter a valid Project Owner username,The place holder is removed and username is entered succesfully,Ready to Test,,Ready to Test,,Ready to Test
+2.3,Enter a valid Project Owner email,The place holder is removed and email is entered succesfully,Ready to Test,,Ready to Test,,Ready to Test
+2.4,Enter a valid Project Owner password,"-The place holder is removed and password is entered succesfully
+-The password id encripted(****) or (......)",Ready to Test,,Ready to Test,,
+2.5,Click on Sign-up button,"-Sign-up is succesfull
+-User is redirected to the main page
+-A verification email is sent to the user",Ready to Test,,Ready to Test,,
+3,Register using valid Facebook user (who has an email),,,,,,
+3.1,Click on Facebook icon,User is redirectet to Facebook to register using it,Ready to Test,,Ready to Test,,Ready to Test
+3.2,Login to Facebook( when redirected to it),"-User is return to the application
+-Sign-up is succesfull
+-User is redirected to the home page",Ready to Test,,Ready to Test,,Ready to Test
+4,Register using valid Facebook user (who registred to Facebook using a phone number),,,,,,
+4.1,Click on Facebook icon,User is redirectet to Facebook to register using it,Ready to Test,,Ready to Test,,Ready to Test
+4.2,Login to Facebook( when redirected to it),"-User is returned to the application
+-User is asked to add an email address",Ready to Test,,Ready to Test,,Ready to Test
+4.3,Enter a valid email,The place holder is removed and email is entered succesfully,Ready to Test,,Ready to Test,,Ready to Test
+4.4,Enter a valid password ,"-The place holder is removed and password is entered succesfully
+-The password id encripted(****) or (......)",Ready to Test,,Ready to Test,,Ready to Test
+4.5,Click on sigh-up button,"-Sign-up is succesfull
+-User is redirected to the main page
+-A verification email is sent to the user",Ready to Test,,Ready to Test,,
+5,Register using valid Google account		,,,,,,
+5.1,Click on Google icon,User is redirectet to Google account page,Ready to Test,,Ready to Test,,Ready to Test
+5.2,Choose an account,"-User is returned to the application
+-Registration is done succesfully
+-User is redirected to home page",Ready to Test,,Ready to Test,,
+6,Sign-up without choosing type of user,,,,,,
+6.1,Do not choose any user,,Ready to Test,,Ready to Test,,
+6.2,Fill the other fields with valid data,,Ready to Test,,Ready to Test,,
+6.3,Click on sign-up button,The error message appears telling that user must choose the type of user,Ready to Test,,Ready to Test,,
+7,Sign-up with invalid user name,,,,,,
+7.1,Fill the username field with invalid user name(one character-A),,Ready to Test,,Ready to Test,,
+7.2,Fill the other fields with valid data,,Ready to Test,,Ready to Test,,
+7.3,Click on sign-up button,"The error massege appears telling the user to fill the username 
+with valid name at least two characters",Ready to Test,,Ready to Test,,
+8,Sign-up with already used username,,,,,,
+8.1,Fill the usename with already used username,,Ready to Test,,Ready to Test,,
+8.2,Fill the other fields with valid data,,Ready to Test,,Ready to Test,,
+8.3,Click on sign-up button,"The error massege appears telling the user that the username
+ already taken",Ready to Test,,Ready to Test,,
+9,Sigh-up with a very long username,,,,,,
+9.1,Fill the username field with a very long name(100),,Ready to Test,,Ready to Test,,
+9.2,Fill the other fields with valid data,,Ready to Test,,Ready to Test,,
+9.3,Click on sign-up button,"The error massege appears telling the user that the username
+ must not exceed 50 characters",Ready to Test,,Ready to Test,,
+10,Sign-up with username field empty,,,,,,
+10.1,Leave the username field empty,,Ready to Test,,Ready to Test,,
+10.2,Fill the other fields with valid data,,Ready to Test,,Ready to Test,,
+10.3,Click the sign-up button,"The error massege appears telling the user to fill the username 
+field",Ready to Test,,Ready to Test,,
+11,Sign-up with username in different language,,,,,,
+11.1,Fill the username field in Russian or Arabic,,Ready to Test,,Ready to Test,,
+11.2,Fill the other fields with valid data,,Ready to Test,,Ready to Test,,
+11.3,Click the sign-up button,The registration complete,Ready to Test,,Ready to Test,,
+12,Sign-up without email address,,,,,,
+12.1,Leave the email field empty,,Ready to Test,,Ready to Test,,
+12.2,Fill the other fields with valid data,,Ready to Test,,Ready to Test,,
+12.3,Click the sign-up button,The error massege appears telling the user to fill the email field,Ready to Test,,Ready to Test,,
+13,Sign-up with already used email,,,,,,
+13.1,Fill the email with already used email address,,Ready to Test,,Ready to Test,,
+13.2,Fill the other fields with valid data,,Ready to Test,,Ready to Test,,
+13.3,Click on sign-up button,"-The error massege appears telling the user that the email address
+ already used
+-The message appears encouraging the user to login with existed email",Ready to Test,,Ready to Test,,
+14,Sign-up with wrong email format,,,,,,
+14.1,Fill email address field with wrong email format(dghjsb25.com),,Ready to Test,,Ready to Test,,
+14.2,Fill the other fields with valid data,,Ready to Test,,Ready to Test,,
+14.3,Click the sign-up button,The error message appears telling that email field must be correct format(shd@dgg.com),Ready to Test,,Ready to Test,,
+14,Sign-up with email already used but not verified,,,,,,
+14.1,Enter an already registred but not verified email in the email field,,Ready to Test,,Ready to Test,,
+14.2,Fill the other fields with valid data,,Ready to Test,,Ready to Test,,
+14.3,Click the sign-up button,"-The message appears telling the user that entered email already used and needs verification
+-An option appears to send a verification email again",Ready to Test,,Ready to Test,,
+15,Sign-up with an email that is attached with already register Facebook user,,,,,,
+15.1,Enter an valid email that is attached with already register facebook user,,Ready to Test,,Ready to Test,,
+15.2,Fill the other fields with valid data,,Ready to Test,,Ready to Test,,
+15.3,Click the sign-up button,A message appears telling the user that this email is attached to the facebook account and encourage the user to login using Facebook,Ready to Test,,Ready to Test,,
+16,Sign-up with empty password field,,,,,,
+16.1,Leave the passwor field empty,,Ready to Test,,Ready to Test,,
+16.2,Fill the other fields with valid data,,Ready to Test,,Ready to Test,,
+16.3,Click the sign-up button,"The error massege appears telling the user to fill the password
+ field",Ready to Test,,Ready to Test,,
+17,Sign-up with short password,,,,,,
+17.1,Fill the pssword field with a short password(Qdf3&),,Ready to Test,,Ready to Test,,
+17.2,Fill the other fields with valid data,,Ready to Test,,Ready to Test,,
+17.3,Click the sign-up button,The error message appears telling to insert the password with a minimum of 6 characters,Ready to Test,,Ready to Test,,
+18,Sign-up with password that does not contain a special characters,,,,,,
+18.1,Fill the pssword field with a password that does not contain special characters(Qsdf45),,Ready to Test,,Ready to Test,,
+18.2,Fill the other fields with valid data,,Ready to Test,,Ready to Test,,
+18.3,Click the sign-up button,The error message appears telling to insert the password which contains special characters,Ready to Test,,Ready to Test,,
+19,Sign-up with password that does not contain a small letters,,,,,,
+19.1,Fill the pssword field with a password that does not contain small letters(ASD45£),,Ready to Test,,Ready to Test,,
+19.2,Fill the other fields with valid data,,Ready to Test,,Ready to Test,,
+19.3,Click the sign-up button,The error message appears telling to insert the password which contains small letters,Ready to Test,,Ready to Test,,
+20,Sign-up with password that does not begin with capital letter,,,,,,
+20.1,Fill the pssword field with a password that does not begin with capital letter(asd45$),,Ready to Test,,Ready to Test,,
+20.2,Fill the other fields with valid data,,Ready to Test,,Ready to Test,,
+20.3,Click the sign-up button,The error message appears telling to insert the password which begins with capital letter,Ready to Test,,Ready to Test,,
+21,Sign-up with password that does not contain a number,,,,,,
+21.1,Fill the pssword field with a password that does not contain a number(Asdf$c),,Ready to Test,,Ready to Test,,
+21.2,Fill the other fields with valid data,,Ready to Test,,Ready to Test,,
+21.3,Click the sign-up button,The error message appears telling to insert the password which contains a number,Ready to Test,,Ready to Test,,
