@@ -7,4 +7,4 @@ Collection includes the following features:
 - Environment to abstract `baseUrl`
 
 ## Test results
-![Alt text](../assets/postman-test-results.jpg?raw=true "Title")
+![Test results](https://github.com/TatianaMihalciuc/Practise/blob/main/Assets/postman-test-results.jpg?raw=true "Title")
